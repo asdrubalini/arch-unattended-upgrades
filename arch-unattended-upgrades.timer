@@ -1,0 +1,9 @@
+[Unit]
+Description=Perform automatic system update
+
+[Timer]
+OnCalendar=hourly
+
+[Install]
+WantedBy=multi-user.target
+

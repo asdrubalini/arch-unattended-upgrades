@@ -1,0 +1,14 @@
+[Unit]
+Description=Perform automatic system update
+After=network-online.target
+Wants=system-auto-update.timer
+
+[Service]
+ExecStart=/usr/bin/arch-unattended-upgrades/arch-unattended-upgrades
+Nice=19
+KillMode=process
+SendSIGKILL=no
+
+[Install]
+WantedBy=multi-user.target
+
