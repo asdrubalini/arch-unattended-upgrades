@@ -1,7 +1,7 @@
 [Unit]
 Description=Perform automatic system update
 After=network-online.target
-Wants=system-auto-update.timer
+Wants=arch-unattended-upgrades.timer
 
 [Service]
 ExecStart=/usr/bin/arch-unattended-upgrades/arch-unattended-upgrades
