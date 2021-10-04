@@ -5,18 +5,12 @@ pacman -Syu --noconfirm
 kernel_installed=$(pacman -Q linux-lts | awk '{ print $2 }')
 kernel_real=$(uname -r | sed 's/-ARCH//' | sed 's/-lts//')
 
-# echo $kernel_installed
-# echo $kernel_real
-
 if [ "$kernel_installed" != "$kernel_real" ]; then
     reboot
 fi
 
 systemd_installed=$(pacman -Q systemd | awk '{ print $2 }')
 systemd_real=$(systemctl --version | head -1 | awk '{ print $3 }' | awk '{print substr($0, 2, length($0) - 2)}' | sed 's/-arch//')
-
-# echo $systemd_installed
-# echo $systemd_real
 
 if [ "$systemd_installed" != "$systemd_real" ]; then
     reboot
