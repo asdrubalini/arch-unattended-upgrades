@@ -2,7 +2,7 @@
 Description=Perform automatic system update
 
 [Timer]
-OnCalendar=hourly
+OnCalendar=daily
 
 [Install]
 WantedBy=multi-user.target
